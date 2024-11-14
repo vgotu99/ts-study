@@ -11,4 +11,3 @@ const bodyElement3 = document.querySelector('body')
 if (bodyElement3) {
   bodyElement3.innerText = 'Hello'
 }
-
