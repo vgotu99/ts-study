@@ -5,7 +5,7 @@ interface IUser {
 }
 
 type UserKeys = keyof IUser; // keyof를 이용해서 IUser의 key들만 모아서 UserKeys type을 정의한다.
-// 'name', 'age', 'address'
+// 'name' | 'age' | 'address'
 
 
 const user = {
