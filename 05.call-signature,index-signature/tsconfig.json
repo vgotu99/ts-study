@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src", // 컴파일할 ts 파일들이 위치하는 디렉토리
+    "outDir": "./build/js", // 컴파일된 js 파일들이 위치할 디렉토리
+    "target": "ES6", // 컴파일될 js 버전 설정
+    "noEmitOnError": true, // 에러가 있는 ts파일은 컴파일 하지 않음 | false는 그 반대
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "strict": true,
+  },
+  "include": [
+    "./src/**/*.ts" // 해당 위치를 제외한 곳에서 생성된 ts 파일은 컴파일하지 않도록 함
+  ]
+}
