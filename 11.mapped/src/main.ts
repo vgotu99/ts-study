@@ -3,6 +3,29 @@
 // type이 다른 type에서 파생되고 동기화 상태를 유지해야 하는 경우에 특히 유용하다.
 // { [T in unionType] : type_of_value }
 // map method처럼 하나씩 순회를 하며 객체 타입을 만들어주는 느낌!
+type AppConfig = {
+  username: string
+  email: string
+  imgURL: string
+  phone: number
+}
+
+type AppPermissions = {
+  changeUsername: boolean
+  changeEmail: boolean
+}
+// 위의 AppPermissions는 AppConfig에 새로운 타입인 a: string을 추가하면 일일히 changeA: boolean 타입을 추가해줘야한다. 따라서 아래 처럼 mapped type을 이용해서 AppConfig 타입에 새로운 타입이 추가되면 AppPermissionsMapped 타입에 새로운 타입이 추가되도록 변경해주면 유지보수에 좋다!
+type AppPermissionsMapped = {
+  [K in keyof AppConfig as `change${Capitalize<K>}`]: boolean
+}
+/* 위 OptinalType은 아래와 같은 형태의 객체 타입이 된다.
+type AppPermissionsMapped = {
+  chageUsername: boolean
+  chageEmail: boolean
+  chageImgURL: boolean
+  chagePhone: boolean
+}
+*/
 
 type Users = "John" | "Han" | "Kim";
 

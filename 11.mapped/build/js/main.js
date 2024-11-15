@@ -1,9 +1,4 @@
 "use strict";
-// Mapped
-// Mapped type은 중복을 피하기 위해 다른 타입을 바탕으로 새로운 타입을 생성할 수 있다.
-// type이 다른 type에서 파생되고 동기화 상태를 유지해야 하는 경우에 특히 유용하다.
-// { [T in unionType] : type_of_value }
-// map method처럼 하나씩 순회를 하며 객체 타입을 만들어주는 느낌!
 /* 위 UserAge는 Mapped type을 이용해서 아래와 같은 형태의 객체 타입이 된다.
 type UserAge = {
   John: number,
