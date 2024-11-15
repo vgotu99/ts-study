@@ -68,10 +68,11 @@ type User = {
 let firstUser : User = {
   firstName: 'John'
 }
-/* Required<Type>으로 Type에 옵셔널한 선택 속성이 있는 경우에도 모든 속성을 필수로 포함하도록 강제할 수 있다.
+// Required<Type>으로 Type에 옵셔널한 선택 속성이 있는 경우에도 모든 속성을 필수로 포함하도록 강제할 수 있다.
 let secondUser: Required<User> = {
-  firstName: 'Kim'
-}  */
+  firstName: 'Kim',
+  lastName: 'Jun' // lastName?: string 이었지만 Required 유틸리티 타입으로 인해 필수 속성으로 강제했기에 반드시 포함해야한다.
+}
 
 
 // Record  |  Record<Keys, Type>
